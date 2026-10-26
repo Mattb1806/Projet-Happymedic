@@ -1,0 +1,94 @@
+:root {
+    --bleu: #1b6ca8;
+    --bleu-fonce: #14527f;
+    --fond: #f3f6fa;
+    --texte: #1f2933;
+    --bordure: #d5dde6;
+    --ok-fond: #e6f4ea;
+    --ok-texte: #1e6b34;
+    --erreur-fond: #fdeaea;
+    --erreur-texte: #a12b2b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--fond);
+    color: var(--texte);
+    line-height: 1.5;
+}
+
+.barre {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    background: var(--bleu);
+    color: #fff;
+}
+.barre a { color: #fff; text-decoration: none; margin-left: 1rem; }
+.barre a:hover { text-decoration: underline; }
+.barre .logo { margin-left: 0; font-size: 1.2rem; font-weight: 700; }
+
+.carte {
+    max-width: 640px;
+    margin: 2rem auto;
+    padding: 1.5rem 2rem;
+    background: #fff;
+    border: 1px solid var(--bordure);
+    border-radius: 10px;
+}
+h1 { margin-top: 0; font-size: 1.5rem; }
+a { color: var(--bleu); }
+
+label { display: block; margin: 1rem 0 0.25rem; font-weight: 600; }
+input, select {
+    width: 100%;
+    padding: 0.55rem 0.7rem;
+    border: 1px solid var(--bordure);
+    border-radius: 6px;
+    font: inherit;
+}
+input:focus, select:focus { outline: 2px solid var(--bleu); border-color: var(--bleu); }
+
+button {
+    margin-top: 1.25rem;
+    padding: 0.6rem 1.4rem;
+    border: 0;
+    border-radius: 6px;
+    background: var(--bleu);
+    color: #fff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+button:hover { background: var(--bleu-fonce); }
+
+.alerte { padding: 0.7rem 1rem; border-radius: 6px; }
+.alerte.ok { background: var(--ok-fond); color: var(--ok-texte); }
+.alerte.erreur { background: var(--erreur-fond); color: var(--erreur-texte); }
+
+.menu { list-style: none; margin: 1.5rem 0 0; padding: 0; }
+.menu li { margin-bottom: 0.6rem; }
+.menu a {
+    display: block;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--bordure);
+    border-radius: 6px;
+    text-decoration: none;
+}
+.menu a:hover { background: var(--fond); border-color: var(--bleu); }
+
+table { width: 100%; margin: 1rem 0; border-collapse: collapse; }
+th, td { padding: 0.5rem 0.7rem; border-bottom: 1px solid var(--bordure); text-align: left; }
+th { background: var(--fond); }
+
+.grille { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 1rem; }
+.centre { text-align: center; }
+
+@media (max-width: 600px) {
+    .carte { margin: 1rem; padding: 1.2rem; }
+    .grille { grid-template-columns: 1fr; }
+}
